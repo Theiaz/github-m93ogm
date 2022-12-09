@@ -1,7 +1,8 @@
 import { createApp } from "vue";
-
+import { createRouter, createWebHistory } from "vue-router";
 import App from "./App.vue";
-import Current from "./components/Current.vue";
+import Page from "./views/Page.vue";
+import Previous from "./components/Previous.vue";
 import Next from "./components/Next.vue";
 
 const app = createApp(App);
@@ -9,12 +10,12 @@ const app = createApp(App);
 const routes = [
   {
     path: "/",
-    component: App,
+    component: Page,
     children: [
       {
-        name: "current",
-        path: "",
-        component: Current,
+        name: "previous",
+        path: "previous",
+        component: Previous,
       },
       {
         name: "next",
